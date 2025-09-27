@@ -1,0 +1,707 @@
+/* Definições de Cores e Fontes */
+:root {
+    --primary-color: #0d0d0d;
+    --secondary-color: #B8860B;
+    --text-light: #f5f5f5;
+    --text-dark: #212121;
+    --bg-light: #f9f9f9;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* ESTILO DO CABEÇALHO */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav a {
+    color: var(--text-dark);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Responsividade: Menu Hamburguer */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 20px;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        padding-top: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .main-nav a {
+        margin: 0;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+}
+
+/* NOVO LAYOUT - HERO SECTION */
+.hero-section {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 5rem;
+    color: var(--text-light);
+}
+
+.hero-intro {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.accent-text {
+    color: var(--secondary-color);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+/* ESTILO DO BOTÃO CTA */
+.cta-button {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* ESTILO DA SEÇÃO DE SERVIÇOS */
+.services-section {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 50px;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-info {
+    padding: 25px;
+}
+
+.service-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.service-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.service-btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.service-btn:hover {
+    background-color: #ffb74d;
+}
+
+/* Responsividade - Transforma o layout em uma única coluna para telas menores */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .hero-image-container {
+        flex: none;
+        width: 100%;
+        height: 50vh;
+    }
+    .hero-image {
+        height: 100%;
+        width: 100%;
+    }
+    .hero-content {
+        flex: none;
+        padding: 2rem;
+    }
+    .hero-title {
+        font-size: 3rem;
+    }
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ESTILO DA SEÇÃO DE PORTFÓLIO */
+.portfolio-section {
+    padding: 80px 20px;
+    background-color: var(--primary-color);
+    text-align: center;
+    color: var(--text-light);
+}
+
+.portfolio-section .section-title {
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(250px, auto);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Deixa o primeiro item maior para criar o efeito assimétrico */
+.project-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--text-light);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-overlay {
+    transform: translateY(0);
+}
+
+.project-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 900px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+    .project-item:first-child {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* ESTILO DA SEÇÃO DE DEPOIMENTOS */
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 350px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ESTILO DA SEÇÃO DE CTA FINAL COM FORMULÁRIO */
+.final-cta-section {
+    padding: 80px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.final-cta-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 10px;
+}
+
+.final-cta-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.final-cta-btn {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.final-cta-btn:hover {
+    background-color: #ffb74d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #4CAF50;
+}
+
+/* ESTILO DO RODAPÉ */
+.main-footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 1.25rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* ESTILO PARA O LINK ATIVO */
+.main-nav a.active {
+    color: var(--secondary-color);
+    font-weight: 700;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+}
+
+/* EFEITO DE ANIMAÇÃO DE ENTRADA */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ESTILO DO MODAL GERAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modal.is-visible {
+    display: flex;
+}
+
+/* CONTEÚDO DO MODAL (O BOX BRANCO) */
+.modal-content {
+    background-color: #fff;
+    /* Aumento o padding para garantir espaço livre ao redor do título e X */
+    padding: 50px 40px 40px 40px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Damos mais margem nas laterais */
+    max-width: 750px;
+    position: relative;
+    z-index: 2002; /* Garante que ele esteja visível */
+    margin-top: 50px; 
+    margin-bottom: 50px; /* Garante espaço na base */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza horizontalmente */
+    overflow: visible;
+
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+.modal.is-visible .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* BOTÃO DE FECHAR (X) - PRIORIDADE */
+.modal-close-btn {
+    color: var(--primary-color);
+    position: absolute;
+    top: 30px; /* Reduzi um pouco para centralizar melhor */
+    right: 20px; /* Reduzi um pouco para centralizar melhor */
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2003; 
+    
+
+}
+
+/* TÍTULO DO MODAL - GARANTIA DE ESPAÇO LIVRE */
+#modal-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    /* Aumenta o recuo da direita para não bater no botão 'X' */
+    padding-right: 50px; 
+    padding-top: 5px; /* Empurra levemente para baixo para não bater no topo */
+}
+
+
+/* ESTILO DO MODAL - PARTE DOS PACOTES */
+#modal-packages h4 {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+#modal-packages ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.package-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#modal-packages ul li {
+    background-color: var(--bg-light);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+    line-height: 1.4;
+}
+
+#modal-packages ul li:hover {
+    transform: translateX(5px);
+}
+
+/* Estilo para o Nome do Pacote (ex: Pacote Premium) */
+#modal-packages ul li strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* Estilo para o Preço */
+.package-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+/* Estilo para os Detalhes do Pacote */
+.package-details {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+    .modal-content {
+        width: 95%; /* Usa quase toda a tela, mas com margem */
+        /* Reduz o padding interno verticalmente para caber na tela */
+        padding: 30px 15px; 
+    }
+    #modal-title {
+        font-size: 1.8rem;
+        padding-right: 50px; /* Garante que o título não corte o botão X */
+    }
+    .modal-close-btn {
+        right: 15px; /* Ajusta a posição do botão X para caber */
+        top: 15px;
+    }
+}
