@@ -8,12 +8,14 @@ const PORT = 3000;
 // A URL do seu frontend (site visual do Portfólio)
 const FRONTEND_URL = 'https://ajestendar-portfolio-1.onrender.com'; 
 // Middleware para permitir requisições de outras origens e para processar JSON
-app.use(cors({
-    origin: FRONTEND_URL, // Permite requisições SOMENTE deste domínio
-    methods: 'GET,POST',
-    credentials: true 
-}));
+// 1. ANÁLISE DE JSON (DEVE VIR PRIMEIRO)
 app.use(express.json());
+
+// 2. CONFIGURAÇÃO DE CORS 
+app.use(cors({
+    origin: '*', // Aceita QUALQUER DOMÍNIO (Recomendado para APIs de Portfólio/Teste)
+    methods: 'GET,POST',
+}));
 
 // Configuração do Nodemailer com suas credenciais do Gmail
 const transporter = nodemailer.createTransport({
