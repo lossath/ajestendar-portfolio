@@ -21,8 +21,8 @@ app.use(cors({
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'contatogu2tech@gmail.com', // Substitua pelo seu email do Gmail
-        pass: 'txujswbtbzhuludd'       // Substitua pela senha de app que você gerou
+    user: process.env.EMAIL_USER, // LÊ DA VARIÁVEL DE AMBIENTE
+    pass: process.env.EMAIL_PASS // LÊ DA VARIÁVEL DE AMBIENTE
     }
 });
 
