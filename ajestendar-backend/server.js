@@ -18,11 +18,20 @@ app.use(cors({
 }));
 
 // Configuração do Nodemailer com suas credenciais do Gmail
+// Configuração do Nodemailer usando SMTP do SendGrid (Com timeout estendido)
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.sendgrid.net', // Servidor SMTP do SendGrid
+    port: 587, // Porta padrão para TLS/STARTTLS
+    secure: false, 
     auth: {
-    user: process.env.EMAIL_USER, // LÊ DA VARIÁVEL DE AMBIENTE
-    pass: process.env.EMAIL_PASS // LÊ DA VARIÁVEL DE AMBIENTE
+        user: 'apikey', 
+        pass: process.env.SENDGRID_API_KEY 
+    },
+    // NOVO: Aumenta o tempo de espera antes de desistir (de 30s para 60s)
+    connectionTimeout: 60000, 
+    // NOVO: Força o uso de TLS, que é mais compatível com o Render
+    tls: {
+        ciphers: 'SSLv3'
     }
 });
 
