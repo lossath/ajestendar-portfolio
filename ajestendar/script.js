@@ -1,9 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Lógica do formulário de contato
+    const FORMSPREE_CONTACT_URL = 'https://formspree.io/f/xanpenpj'; // <-- MUDAR AQUI!
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
-    
+    contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Cria o objeto FormData com os dados do formulário
+    const formData = new FormData(contactForm);
+
+    formMessage.textContent = 'Enviando...';
+    formMessage.style.color = '#333'; 
+
+    try {
+        const response = await fetch(FORMSPREE_CONTACT_URL, {
+            method: 'POST',
+            body: formData, // Envia o FormData diretamente (melhor para Formspree)
+            headers: {
+                // Não precisamos de Content-Type: application/json quando usamos FormData
+                'Accept': 'application/json' 
+            }
+        });
+
+        if (response.ok) {
+            formMessage.textContent = 'Mensagem enviada com sucesso! Em breve entrarei em contato.';
+            formMessage.style.color = '#4CAF50';
+            contactForm.reset();
+        } else {
+            // Tenta obter a mensagem de erro do Formspree
+            const data = await response.json();
+            formMessage.textContent = data.error || 'Falha ao enviar. Tente novamente.';
+            formMessage.style.color = '#ff6347';
+        }
+    } catch (error) {
+        formMessage.textContent = 'Erro de rede. Verifique sua conexão.';
+        formMessage.style.color = '#ff6347';
+        console.error('Fetch Error:', error);
+    }
+});
 
     // LÓGICA DE ANIMAÇÃO DE ENTRADA
     const fadeInSections = document.querySelectorAll('.fade-in-section');
