@@ -125,13 +125,14 @@
                 <h2 class="final-cta-title">Vamos Conversar?</h2>
                 <p class="final-cta-subtitle">Preencha o formulário e entrarei em contato em breve para tirar suas dúvidas e começar o seu projeto.</p>
                 
-                <form id="contact-form" class="contact-form">
-                    <input type="text" id="name" placeholder="Seu Nome" required>
-                    <input type="email" id="email" placeholder="Seu Email" required>
-                    <textarea id="message" rows="5" placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit" class="final-cta-btn">Enviar Mensagem</button>
-                    <div id="form-message" class="form-message"></div>
-                </form>
+                <form id="contact-form" class="contact-form" 
+      action="https://formspree.io/f/xanpenpj" 
+      method="POST">
+    <input type="text" id="name" name="name" placeholder="Seu Nome" required>
+    <input type="email" id="email" name="_replyto" placeholder="Seu Email" required>
+    <textarea id="message" name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+    <button type="submit" class="final-cta-btn">Enviar Mensagem</button>
+</form>
             </div>
         </section>
 

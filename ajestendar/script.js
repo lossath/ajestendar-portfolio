@@ -3,43 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        if (name === '' || email === '' || message === '') {
-            formMessage.textContent = 'Por favor, preencha todos os campos.';
-            formMessage.style.color = '#ff6347';
-            return;
-        }
-
-        try {
-            const response = await fetch('https://ajestendar-portfolio.onrender.com/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, message })
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                formMessage.textContent = data.message;
-                formMessage.style.color = '#4CAF50';
-                contactForm.reset();
-            } else {
-                formMessage.textContent = data.message;
-                formMessage.style.color = '#ff6347';
-            }
-        } catch (error) {
-            formMessage.textContent = 'Erro ao se conectar com o servidor. Tente novamente mais tarde.';
-            formMessage.style.color = '#ff6347';
-        }
-    });
+    
 
     // LÓGICA DE ANIMAÇÃO DE ENTRADA
     const fadeInSections = document.querySelectorAll('.fade-in-section');
