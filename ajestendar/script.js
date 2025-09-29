@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Lógica do formulário de contato
-    const FORMSPREE_CONTACT_URL = 'https://formspree.io/f/xanpenpj'; // <-- MUDAR AQUI!
+    const FORMSPREE_CONTACT_URL = 'https://formspree.io/f/xanpenpj'; // link para enviar o formulário atraves do formspree
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
