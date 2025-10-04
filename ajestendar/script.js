@@ -108,19 +108,19 @@ document.addEventListener('DOMContentLoaded', () => {
         description: "Solução Full-Stack para coletar fotos e vídeos dos convidados em tempo real, eliminando a dependência de aplicativos e redes sociais. Serviço Único no mercado.",
         packages: [
             { 
-                name: "Pacote Entrada (R$ 650)", 
-                price: "Ideal para funcionalidade básica.", 
-                details: "Galeria, Paginação, Download e 30 dias de serviço." 
+                name: "Pacote Entrada ($ )", 
+                price: "Site simples com 1 pagina com identificação dos noivos, local e data do casamento, card qr code..", 
+                details: "Botão/link para envio de fotos/vídeos(grupo de whatsaap ou google, drive) -30 dias." 
             },
             { 
-                name: "Pacote Intermediário (R$ 950)", 
-                price: "Melhor experiência de usuário.", 
-                details: "Inclui Carrossel/Lightbox e Design Personalizado (cores/fontes)." 
+                name: "Pacote Intermediário ($ )", 
+                price: "Melhor experiência de usuário. 15 GB de Armazenamento / 60 Dias de serviço..", 
+                details: "Inclui a Galeria e Paginação, mais Carrossel/Lightbox e Design Personalizado (cores e fontes). Card qr code." 
             },
             { 
-                name: "Pacote Premium (R$ 1.350)", 
-                price: "Controle total e Backup.", 
-                details: "Todos os recursos, 90 dias de serviço, Recursos de Vídeo e Backup Offline." 
+                name: "Pacote Premium ($ )", 
+                price: "25 GB de Armazenamento / 90 Dias de serviço..", 
+                details: "Todos os recursos do plano intermediário, mas Site exclusivo com design 100% personalizado. convite digital +card qr code, ais Backup Offline de todas as mídias." 
             }
         ]
     },
@@ -132,19 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
         description: "Criação de páginas focadas em performance e Retorno Sobre Investimento (ROI), garantindo que seu projeto digital alcance o público certo.",
         packages: [
             { 
-                name: "Pacote Entrada (R$ 900)", 
-                price: "Foco em Captação de Leads.", 
-                details: "Template Otimizado, Formulário de Contato Básico e Entrega em 5 dias." 
+                name: "Pacote Entrada (Quick Launch - $ )", 
+                price: "Foco em Captação de Leads.Template Otimizado / 1 Seção (Hero, CTA).", 
+                details: "Responsivo, Formulário de Contato básico. Foco em velocidade." 
             },
             { 
-                name: "Pacote Intermediário (R$ 1.600)", 
-                price: "Foco em Otimização e Remarketing.", 
+                name: "Pacote Intermediário ($ )", 
+                price: "Foco em Otimização e Remarketing.Design 100% Customizado / Até 4 Seções (Depoimentos, Vantagens).", 
                 details: "Design Customizado, SEO Básico e Integração com Pixel (Google/Facebook Ads)." 
             },
             { 
-                name: "Pacote Premium (R$ 2.400)", 
-                price: "Máquina de Vendas Completa.", 
-                details: "Inclui SEO Avançado, Integração com E-commerce e Plataformas de E-mail Marketing." 
+                name: "Pacote Premium ($ )", 
+                price: "Design Customizado com Animações e Páginas de Agradecimento.", 
+                details: "SEO Avançado, Otimização Máxima e Integração com E-mail Marketing (Mailchimp/ActiveCampaign) e Pagamento." 
             }
         ]
     },
@@ -156,19 +156,19 @@ document.addEventListener('DOMContentLoaded', () => {
         description: "Desenvolvimento de sites profissionais para pequenas empresas e freelancers. Construa credibilidade e expanda sua presença digital.",
         packages: [
             { 
-                name: "Pacote Entrada (R$ 700)", 
+                name: "Pacote Entrada ($ )", 
                 price: "Presença Digital Imediata.", 
                 details: "1 Página (Cartão de Visitas Digital) com Formulário de Contato." 
             },
             { 
-                name: "Pacote Intermediário (R$ 1.950)", 
-                price: "Atração e Expansão.", 
-                details: "Até 5 Páginas, Galeria de Projetos e Chat Widget (WhatsApp/Live Chat)." 
+                name: "Pacote Intermediário ($ )", 
+                price: "Atração e Expansão.SEO Básico, Treinamento de Uso e 30 dias de suporte.", 
+                details: "Até 5 Páginas (Serviços, Sobre, Contato..) com Galeria de Projetos e Chat Widget(WhatsApp/Live Chat)." 
             },
             { 
-                name: "Pacote Premium (R$ 3.500)", 
-                price: "Autonomia e Otimização Total.", 
-                details: "Páginas Ilimitadas, Painel de Administração (CMS) e 3 Meses de Suporte Proativo." 
+                name: "Pacote Premium ($ )", 
+                price: "Autonomia e Otimização Total.SEO Avançado, Painel de Administração Simples (para editar textos) e 3 Meses de Suporte e Manutenção Proativa.", 
+                details: "Ilimitadas (Com Blog e Suporte a E-commerce)." 
             }
         ]
     }
